@@ -9,11 +9,11 @@ body {
   text-align: center;
   color: "black";
   padding: 20px;
-  background-color: sandybrown;
+  background-color: dodgerblue;
 }
 
 .js-answer {
-  width: 160px;
+  width: 240px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -30,7 +30,7 @@ body {
   height: 200px;
   margin-left: 400;
   font-size: 22px;
-  background-image: linear-gradient(white, grey);
+  background-image: linear-gradient(dodgerblue, lightblue, sandybrown);
   padding: 15px;
   border-radius: 30px;
   border-style: solid;
@@ -45,7 +45,7 @@ body {
   height: 200px;
   margin-right: 400;
   font-size: 22px;
-  background-image: linear-gradient(white, grey);
+  background-image: linear-gradient(dodgerblue, lightblue, sandybrown);
   padding: 15px;
   border-radius: 30px;
   border-style: solid;
