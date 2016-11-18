@@ -6,16 +6,50 @@ body {
   background-color: white;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   color: "black";
   padding: 20px;
+  background-color: sandybrown;
 }
 
 .js-answer {
-  width: 90px;
-  height: 25px;
+  width: 160px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   color: "black";
   padding: 20px;
-  font-size: 24px;
+  font-size: 29px;
+}
+
+.la-weather {
+  float: left;
+  top-margin: 75px;
+  text-align: center;
+  width: 300px;
+  height: 200px;
+  margin-left: 400;
+  font-size: 22px;
+  background-image: linear-gradient(white, grey);
+  padding: 15px;
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: lightgrey;
+}
+
+.ny-weather {
+  float: right;
+  top-margin: 75px;
+  width: 300px;
+  height: 200px;
+  margin-right: 400;
+  font-size: 22px;
+  background-image: linear-gradient(white, grey);
+  padding: 15px;
+  border-radius: 30px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: lightgrey;
+
 }
