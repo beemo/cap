@@ -12,33 +12,38 @@ function getDataFromApi(searchTerm, callback) {
   $.getJSON(BASE_URL, query, callback);
 }
 
-function calculateData(data) {
+function getData(data) {
 
   if (data.list[0]) {
-    var laTemp = parseInt(data.list[0].main.temp);
-    var nyTemp = parseInt(data.list[1].main.temp);
-    var laSky = (data.list[0].weather[0].main);
-    var nySky = (data.list[1].weather[0].main);
-    var laIcon = (data.list[0].weather[0].icon);
-    var nyIcon = (data.list[1].weather[0].icon);
-    console.log(laTemp, nyTemp, laSky, nySky);
+    state.laTemp = parseInt(data.list[0].main.temp);
+    state.nyTemp = parseInt(data.list[1].main.temp);
+    state.laSky = (data.list[0].weather[0].main);
+    state.nySky = (data.list[1].weather[0].main);
+    state.laIcon = (data.list[0].weather[0].icon);
+    state.nyIcon = (data.list[1].weather[0].icon);
+
+    calculateData(state);
+
   }
   else {
-    console.log('<p>No results</p>');
+    $('.js-answer').text("openweathermap.org appears to be down.");
   }
+};
 
-  if (laSky === nySky) {
+function calculateData(state) {
 
-      if ((laTemp - nyTemp) <= 2 && (nyTemp - laTemp) <= 2) {
+    if (state.laSky === state.nySky) {
+
+      if ((state.laTemp - state.nyTemp) <= 2 && (state.nyTemp - state.laTemp) <= 2) {
         state.result = "Yes.";
       }
-      else if ((laTemp - nyTemp) <= 6 && (nyTemp - laTemp) <= 6) {
+      else if ((state.laTemp - state.nyTemp) <= 6 && (state.nyTemp - state.laTemp) <= 6) {
         state.result = "Pretty close.";
       }
-      else if ((laTemp - nyTemp) <= 10 && (nyTemp - laTemp) <= 10) {
+      else if ((state.laTemp - state.nyTemp) <= 10 && (state.nyTemp - state.laTemp) <= 10) {
         state.result = "Sort of.";
       }
-      else if ((laTemp - nyTemp) > 14 || (nyTemp - laTemp) > 14) {
+      else if ((state.laTemp - state.nyTemp) <= 14 || (state.nyTemp - state.laTemp) <= 14) {
         state.result = "Not really.";
       }
       else {
@@ -48,16 +53,16 @@ function calculateData(data) {
    else {
      state.result = "Nope.";
    }
+showResult(state);
+};
+
+function showResult(state) {
   $('.js-answer').text(state.result);
-
   $('.weather').removeAttr('hidden');
-  $('.la-weather').html('<h3>Los Angeles</h3><img src="http://openweathermap.org/img/w/' + laIcon + '.png"><br><p>Current conditions: ' + laTemp + '°F, ' + laSky + '</p>');
-  $('.ny-weather').html('<h3>New York</h3><img src="http://openweathermap.org/img/w/' + nyIcon + '.png"><br><p>Current conditions: ' + nyTemp + '°F, ' + nySky + '</p>');
-
+  $('.la-weather').html('<h3>Los Angeles</h3><img src="http://openweathermap.org/img/w/' + state.laIcon + '.png"><br><p>Current conditions: ' + state.laTemp + '°F, ' + state.laSky + '</p>');
+  $('.ny-weather').html('<h3>New York</h3><img src="http://openweathermap.org/img/w/' + state.nyIcon + '.png"><br><p>Current conditions: ' + state.nyTemp + '°F, ' + state.nySky + '</p>');
 };
 
 $(document).ready(function() {
-  getDataFromApi(query, calculateData);
- // console.log(state.result);
- // $('.js-answer').text(state.result);
+  getDataFromApi(query, getData);
 });
