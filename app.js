@@ -3,14 +3,21 @@ var BASE_URL = 'http://api.openweathermap.org/data/2.5/group';
 var query = {
   units: 'imperial',
   appid: "4ff7297df1f3ec7c3571266d62a57785",
-  id: "5368361,5128581"
+  id: "5368361,5128581",
 }
 
 var state = {};
 
-function getDataFromApi(searchTerm, callback) {
-  $.getJSON(BASE_URL, query, callback);
-}
+function getDataFromApi(searchTerm) {
+
+  $.getJSON(BASE_URL, query)
+    .done(function(data) {
+      getData(data);
+    })
+    .fail(function() {
+      $('.js-answer').text("openweathermap.org appears to be down.");
+  })
+};
 
 function getData(data) {
 
@@ -23,10 +30,6 @@ function getData(data) {
     state.nyIcon = (data.list[1].weather[0].icon);
 
     calculateData(state);
-
-  }
-  else {
-    $('.js-answer').text("openweathermap.org appears to be down.");
   }
 };
 
@@ -64,5 +67,5 @@ function showResult(state) {
 };
 
 $(document).ready(function() {
-  getDataFromApi(query, getData);
+  getDataFromApi(query);
 });
