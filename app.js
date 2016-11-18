@@ -50,6 +50,7 @@ function calculateData(data) {
    }
   $('.js-answer').text(state.result);
 
+  $('.weather').removeAttr('hidden');
   $('.la-weather').html('<h3>Los Angeles</h3><img src="http://openweathermap.org/img/w/' + laIcon + '.png"><br><p>Current conditions: ' + laTemp + '°F, ' + laSky + '</p>');
   $('.ny-weather').html('<h3>New York</h3><img src="http://openweathermap.org/img/w/' + nyIcon + '.png"><br><p>Current conditions: ' + nyTemp + '°F, ' + nySky + '</p>');
 
