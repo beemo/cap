@@ -7,13 +7,20 @@
     <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
-    <h1 class="title">Is it the same weather in New York and L.A.?</h1>
-    <div class="js-answer"><div>
-    <div class="la-weather"></div>
-    <div class="ny-weather"></div>
-
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <h2 class="title">Is the weather the same in New York and L.A.?</h2>
+    <noscript>
+     For full functionality of this site it is necessary to enable JavaScript.
+     <br>Here are the <a href="http://www.enable-javascript.com/" target="_blank">
+     instructions how to enable JavaScript in your web browser</a>.
+    </noscript>
+  <div class="container">
+    <h1 class="js-answer"></h1>
+  </div>
+  <div class="weather" hidden>
+    <span class="la-weather"></span>
+    <span class="ny-weather"></span>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha384-Te3ltuYHeiA5s5F5AZJT+ypl5KHViBntHsSyFm38sNPyiMAOYCIMiegWF4UT+vxK" crossorigin="anonymous"></script>
     <script src="app.js"> </script>
   </body>
 </html>
