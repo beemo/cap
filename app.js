@@ -45,8 +45,8 @@ function calculateData(state) {
       }
       else if ((state.laTemp - state.nyTemp) <= 10 && (state.nyTemp - state.laTemp) <= 10) {
         state.result = "Sort of.";
-      }
-      else if ((state.laTemp - state.nyTemp) <= 14 || (state.nyTemp - state.laTemp) <= 14) {
+
+      else if ((state.laTemp - state.nyTemp) <= 14 && (state.nyTemp - state.laTemp) <= 19) {
         state.result = "Not really.";
       }
       else {
