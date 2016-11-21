@@ -15,7 +15,7 @@ function getDataFromApi(searchTerm) {
       getData(data);
     })
     .fail(function() {
-      $('.js-answer').text("openweathermap.org appears to be down.");
+      $('.js-answer').text("Oh no! Openweathermap.org appears to be down.");
   })
 };
 
@@ -45,7 +45,7 @@ function calculateData(state) {
       }
       else if ((state.laTemp - state.nyTemp) <= 10 && (state.nyTemp - state.laTemp) <= 10) {
         state.result = "Sort of.";
-
+      }
       else if ((state.laTemp - state.nyTemp) <= 14 && (state.nyTemp - state.laTemp) <= 19) {
         state.result = "Not really.";
       }
