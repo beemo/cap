@@ -15,7 +15,7 @@ function getDataFromApi(searchTerm) {
       getData(data);
     })
     .fail(function() {
-      $('.js-answer').text("Oh no! Openweathermap.org appears to be down.");
+      $('.js-answer').html('<p>"Oh no! Openweathermap.org appears to be down.<p><br><br><iframe width="280" height="158" src="https://www.youtube.com/embed/W8_Kfjo3VjU" frameborder="0" allowfullscreen></iframe>');
   })
 };
 
