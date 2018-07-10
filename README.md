@@ -1,6 +1,6 @@
 
 <h1> Is the weather the same in New York and L.A.? </h1>
-<h2 href="http://istheweatherthesameinnewyorkandla.com">istheweatherthesameinnewyorkandla.com</h2>
+<h2><a href="http://istheweatherthesameinnewyorkandla.com">istheweatherthesameinnewyorkandla.com</a></h2>
 
 <center><img src="http://imgur.com/sYsYNCR.jpg" alt="screenshot of istheweatherthesameinnewyorkandla.com"></center>
 
